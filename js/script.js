@@ -26,7 +26,8 @@ function initApp() {
   const app = {
     db: null,
     time: null,
-    firstTime: localStorage.getItem("first_time") === null,
+    //firstTime: localStorage.getItem("first_time") === null,
+    firstTime: true,
     activeMenu: 'pos',
     loadingSampleData: false,
     moneys: [2000, 5000, 10000, 20000, 50000, 100000],
@@ -50,8 +51,9 @@ function initApp() {
       const response = await fetch("data/sample.json");
       const data = await response.json();
       this.products = data.products;
+      this.setFirstTime(false);
       for (let product of data.products) {
-        await this.db.addProduct(product);
+      this.db.addProduct(product);
       }
 
       this.setFirstTime(false);
