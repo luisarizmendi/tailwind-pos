@@ -108,7 +108,7 @@
           <input
             type="text"
             class="bg-white rounded-3xl shadow text-lg full w-full h-16 py-4 pl-16 transition-shadow focus:shadow-2xl focus:outline-none"
-            placeholder="Cari menu ..."
+            placeholder="Search menu ..."
             x-model="keyword"
           />
         </div>
@@ -237,7 +237,7 @@
               <div class="flex text-lg font-semibold">
                 <div class="flex-grow text-left">CASH</div>
                 <div class="flex text-right">
-                  <div class="mr-2">Rp</div>
+                  <div class="mr-2">€</div>
                   <input x-bind:value="numberFormat(cash)" x-on:keyup="updateCash($event.target.value)" type="text" class="w-28 text-right bg-white shadow rounded-lg focus:bg-white focus:shadow-lg px-2 focus:outline-none">
                 </div>
               </div>
@@ -351,7 +351,7 @@
           <div class="text-center">
             <img src="img/receipt-logo.png" alt="Tailwind POS" class="mb-3 w-8 h-8 inline-block">
             <h2 class="text-xl font-semibold">TAILWIND POS</h2>
-            <p>CABANG KONOHA SELATAN</p>
+            <p>ARIZ CAFÉ</p>
           </div>
           <div class="flex mt-4 text-xs">
             <div class="flex-grow">No: <span x-text="receiptNo"></span></div>

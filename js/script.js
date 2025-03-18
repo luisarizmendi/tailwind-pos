@@ -30,7 +30,7 @@ function initApp() {
     firstTime: true,
     activeMenu: 'pos',
     loadingSampleData: false,
-    moneys: [2000, 5000, 10000, 20000, 50000, 100000],
+    moneys: [2, 5, 10, 20, 50, 100],
     products: [],
     keyword: "",
     cart: [],
@@ -146,13 +146,10 @@ function initApp() {
       return formatter.format(date);
     },
     numberFormat(number) {
-      return (number || "")
-        .toString()
-        .replace(/^0|\./g, "")
-        .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+      return new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(number);
     },
     priceFormat(number) {
-      return number ? `Rp. ${this.numberFormat(number)}` : `Rp. 0`;
+      return number ? `${this.numberFormat(number)} €` : `0 €`;
     },
     clear() {
       this.cash = 0;
